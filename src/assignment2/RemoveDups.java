@@ -6,7 +6,7 @@ public class RemoveDups {
 
     public static void main(String[] args) {
 
-        String []a={"horse", "dog", "cat", "horse", "dog"};
+        String[] a = {"horse", "dog", "cat", "horse", "dog" };
         int count = 0, i, j;
         String[] tmparray = new String[a.length];
 
@@ -29,7 +29,6 @@ public class RemoveDups {
 
         for (int k = 0; k < count; k++)
             resultarray[k] = tmparray[k];
-
 
         System.out.println(Arrays.toString(resultarray));
     }
