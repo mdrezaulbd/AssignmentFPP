@@ -1,4 +1,4 @@
-package assigment1;
+package assignment1;
 
 public class DataTypePicker {
 
