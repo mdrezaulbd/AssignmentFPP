@@ -8,18 +8,16 @@ public class Prog6 {
         System.out.println(min(a));
     }
 
-    static int min(int[] arrayOfInts)
-    {
-        int min=arrayOfInts[0];
-       for (int i=1;i<arrayOfInts.length;i++)
-       {
-           if (arrayOfInts[i]<min)
-                       min =arrayOfInts[i];
-           else
-               min=min;
+    static int min(int[] arrayOfInts) {
+        int min = arrayOfInts[0];
+        for (int i = 1; i < arrayOfInts.length; i++) {
+            if (arrayOfInts[i] < min)
+                min = arrayOfInts[i];
+            else
+                min = min;
 
 
-       }
-  return min;
+        }
+        return min;
     }
 }
