@@ -1,4 +1,4 @@
-package Assignment3;
+package Assignment3.problem1;
 
 public class Customer {
     static final String IMPORTANT_BILLADD =  "Chicago";

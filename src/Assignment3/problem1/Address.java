@@ -1,4 +1,4 @@
-package Assignment3;
+package Assignment3.problem1;
 
 public class Address {
     String street;
