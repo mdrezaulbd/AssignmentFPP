@@ -2,12 +2,14 @@ package Assignment3.problem2;
 
 
 import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class HeartRates {
 
-    static final double RHR=70.0;
-    static final double LB=0.5;
-    static final double UB=0.85;
+    static final double RHR = 70.0;
+    static final double LB = 0.5;
+    static final double UB = 0.85;
     String firstName;
     String lastName;
     Date dateOfBirth;
@@ -41,43 +43,41 @@ public class HeartRates {
     }
 
 
-    public double AgeCalculator()
-    {
+    public double AgeCalculator() {
         Date currentDate = new Date();
 
-        long diffInMillies = Math.abs(currentDate.getTime() -this.dateOfBirth.getTime());
+        long diffInMillies = Math.abs(currentDate.getTime() - this.dateOfBirth.getTime());
         long diff = (long) (diffInMillies / (24 * 60 * 60 * 1000)); // Convert milliseconds to days
 
-        double  years = (double) (diff / 365);
+        double years = (double) (diff / 365);
 
         return years;
 
 
     }
 
-    public double MaximumHeartRate()
-    {
-      return (220-AgeCalculator());
+    public double MaximumHeartRate() {
+        return (220 - AgeCalculator());
 
     }
 
-    public void   targetHeartRateRange()
-    {
-        double AHR = MaximumHeartRate()-RHR;
-        double LBTHR= (AHR*LB) + RHR;
-        double UBTHR = (AHR*UB) + RHR;
-        System.out.println("The Target Heart Rate Range is between "+ LBTHR+ " and "+  UBTHR);
+    public void targetHeartRateRange() {
+        double AHR = MaximumHeartRate() - RHR;
+        double LBTHR = (AHR * LB) + RHR;
+        double UBTHR = (AHR * UB) + RHR;
+        System.out.println("The Target Heart Rate Range is between " + LBTHR + " and " + UBTHR);
     }
+
     @Override
-    public String toString()
-    {
+    public String toString() {
 
 
-
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = dateFormat.format(this.dateOfBirth);
         //this.dateOfBirth
-        return  "First Name :"+firstName+"\n"+  "Last Name :"+
-                lastName+"\n"+"Date of Birth:"+this.dateOfBirth+"\n"
-                +"Age: "+AgeCalculator()+"\n"+"Maximum Heart Rate:"+(int) MaximumHeartRate();
+        return "First Name :" + firstName + "\n" + "Last Name :" +
+                lastName + "\n" + "Date of Birth:" + formattedDate + "\n"
+                + "Age: " + AgeCalculator() + "\n" + "Maximum Heart Rate:" + (int) MaximumHeartRate();
 
     }
 
